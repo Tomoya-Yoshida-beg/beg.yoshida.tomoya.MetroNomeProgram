@@ -28,3 +28,5 @@ scheduleAtFixedRate()非推奨につき記述しない
 schesuleWithFixedDelay()永久的に実行し続ける
 AIの提案->お前のコードはFixedDelayではなくscheduleを使って、自己自身を再度scheduleすべき
 WithFixedDelay()を入れ子にしなければならないのか?負荷かかり過ぎないか?と思っていた為採用。
+25/9/18:ほんとにこれどこでマニフェストの問題が起きてるかわからん。AIはcreateAttributionContext("…")をしている可能性が高いというが、どこでそれをしているか。  
+依存ライブラリでしてる可能性もあるといっている。通常のsoundpoolでは起きなかったと記憶。簡単なアプリを作って使ってみて特定するしかないか?ググれるか?
