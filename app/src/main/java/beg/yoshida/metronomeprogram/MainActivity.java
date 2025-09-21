@@ -2,6 +2,7 @@ package beg.yoshida.metronomeprogram;
 
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //テスト用。後に消す。
+        Log.e("AttrFinder", "MyApp started");
+
         pickBpm             = findViewById(R.id.pickBpm);
         pickBeatNumerator   = findViewById(R.id.pickBeatNumerator);
         pickBeatDenominator = findViewById(R.id.pickBeatDenominator);
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity{
                         .range(40,300,90).wrap(true).build(),
                 new NumberPickerConfig.Builder(R.id.pickRepeatTimesAll)
                         .range(1,40,4).wrap(true).build()
+
         );
 
         NumberPickerInitializer initializer = new NumberPickerInitializer();
