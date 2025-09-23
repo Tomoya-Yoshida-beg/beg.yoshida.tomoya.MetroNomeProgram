@@ -57,9 +57,6 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //テスト用。後に消す。
-        Log.e("AttrFinder", "MyApp started");
-
         pickBpm             = findViewById(R.id.pickBpm);
         pickBeatNumerator   = findViewById(R.id.pickBeatNumerator);
         pickBeatDenominator = findViewById(R.id.pickBeatDenominator);
@@ -159,12 +156,13 @@ public class MainActivity extends AppCompatActivity{
 
             soundPool.play(soundId, 1f, 1f, 1, 0, 1f);
 
-            if (HowManySounded >= numerator * repeatBar) {
+            if (HowManySounded <= numerator * repeatBar) {
                 HowManySounded++;
             } else {
                 HowPastBar++;
                 if (HowPastBar >= bpms.size()){
                     stopMetronome();
+                    return;
                 }
             }
 
